@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
+
+/* ----------------- CSS geral ----------------- */
+html{
+	width: 100%;
+	font-family: Nunito;
+	overflow-x: hidden;
+}
+body{
+	font-family: Nunito;
+	width: 100%;
+	background-image: linear-gradient(to right, #c0c0c0 , #f0f0f0, #c0c0c0);
+}
+section {
+	transition: 500ms;
+	transform: translateY(200%);
+	display: none;
+}
+.esconder{
+	display: none;
+}
+h5{
+	opacity: 0;
+	color: red;
+	font-size: 10pt;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+h6{
+	text-align: right;
+	width: 100%;
+	position: absolute;
+	bottom: -25px;
+	margin: 0;
+	font-size: 14pt;
+	color: #FFF;
+}
+.aceite{
+	position: relative; 
+	min-height: 90px;
+}
+.inativo {
+	background-color: #b0b0b0 !important;
+}
+
+/* ----------------- CSS dos inputs ----------------- */
+input:focus::-webkit-input-placeholder{
+	transition: 1s;
+	opacity: 0;
+}
+input{
+	color: #000;
+	font-size: 10pt;
+	font-weight: normal;
+}
+/* ----- Texto normal ----- */
+input[type=text]{
+	width: 100%;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+/* ----- Area de texto ----- */
+textarea{
+	height: 8em;
+	overflow: auto;
+	text-align: justify;
+	resize: none;
+	width: 100%;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 10pt;
+}
+textarea:focus::-webkit-input-placeholder{
+	transition: 1s;
+	opacity: 0;
+}
+/* ----- Checkbox ----- */
+input[type=checkbox]{
+	display: inline-block;
+	border-radius: 4px;
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid #ccc;
+	width: 15px;
+	height: 15px;
+}
+input[type=checkbox]:focus{
+	background-color: #fff;
+	outline: 0;
+}
+/* ----- Envio -----*/
+input[type=submit]{
+	width: 35%;
+	margin: 10px auto 0 auto;
+	border: solid 0px #000;
+	border-radius: 2em;
+	background-color: #b0b0b0;
+	color: #FFF;
+	font-size: 12pt;
+	box-shadow: 0 0 11px rgba(33,33,33,.2);
+	padding: 8px;
+	display: block;
+	pointer-events: all;
+}
+input[type=submit]:hover{
+	transform: scale(1.1);
+}
+
+/* ----------------- CSS dos formulários ----------------- */
+.perguntas{
+	width: 60%;
+	margin: 0 auto;
+	background-color: #FFF;
+	padding-top: 20px;
+	margin-bottom: 50px;
+	padding: 2em 7.5em 1em 7.5em;
+}
+.perguntas div{
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+	width: 100%;
+	max-width: 800px;
+}
+#mibocam .perguntas div a{
+	color: #4bbeac !important;
+}
+.perguntas div a{
+	color: #00a335;
+	font-size: 11pt;
+	text-decoration: none;
+	transition: 300ms;
+}
+.outra{
+	color: #00a335;
+	font-size: 11pt;
+	text-decoration: underline;
+	transition: 300ms;
+}
+.outra:hover{
+	color: #00a335;
+}
+#mibocam label{
+	color: #4bbeac !important;
+}
+label{
+	color: #00a335;
+	font-size: 11pt;
+}
+
+label b{
+	color: red;
+	transition: 500ms;
+	font-weight: normal;
+}
+
+
+/* ----------------- CSS dos cabeçalhos ----------------- */
+.cabeçalho{
+	width: 60%;
+	margin: 0 auto;
+	padding-bottom: 25px;
+	margin-top: 30px;
+}
+.cabeçalho div{
+	width: 40%;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	margin-bottom: 50px;
+}
+.cabeçalho img{
+	width: 100%;
+}
+.cabeçalho p{
+	color: #FFF;
+	margin-left: 9%;
+	margin-right: 9%;
+	font-size: 12pt;
+}
+.cabeçalho a{
+	color: #FFF;
+	font-size: 12pt;
+	text-decoration: none;
+	transition: 300ms;
+}
+.cabeçalho a:hover{
+	color: #FFF;
+	text-shadow: 2px 2px #000;
+}
+
+/* ----------------- CSS para botoes de app----------------- */
+#botoes{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.botao{
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+	height: 150px;
+	width: 14em !important;
+	cursor: pointer;
+	border-radius: 2em;
+}
+.botao:hover{
+	transform: scale(1.1);
+}
+.btnTexto{
+	width: 100%;
+	height: 100%;
+	align-content: center;
+	background-color: #f0f0f0;
+	margin: 0 !important;
+	border-bottom-left-radius: 2em;
+	border-bottom-right-radius: 2em;
+}
+.btnTexto p{
+	font-size: 14pt;
+	color: #00a335;
+	font-weight: bold;
+	width: 100%;
+	height: 100%;
+	line-height: 4em;
+	text-align: center;
+	vertical-align: middle;
+	border-bottom-left-radius: 2em;
+	border-bottom-right-radius: 2em;
+}
+.btnImg{
+	padding: 5px;
+	border-top-left-radius: 2em;
+	border-top-right-radius: 2em;
+	margin: 0 !important;
+	background-color: #f0f0f0;
+}
+
+.btnImg img{
+	border-radius: 1.8em;
+}
+
+
+/* ----------------- CSS para telas menores----------------- */
+@media screen and (max-width: 1200px){
+	.aceite{
+		position: relative; 
+		min-height: 110px;
+	}
+	.cabeçalho, .perguntas{
+		width: 85%;
+	}
+	.perguntas{
+		padding: 1em 1.5em 0.5em 1.5em;
+	}
+	#final .perguntas{
+		padding: 2em 7.5em 1em 7.5em;
+	}
+	#escolha .cabeçalho, #escolha .perguntas{
+		width: 60%;
+	}
+	#final .cabeçalho, #final .perguntas{
+		width: 60%;
+	}
+}
+@media screen and (max-width: 950px){
+	.aceite{
+		position: relative; 
+		min-height: 100px;
+	}
+	h6{
+		font-size: 12pt;
+		bottom: -20px;
+	}
+}
+@media screen and (max-width: 800px){
+	h6{
+		font-size: 10pt;
+		bottom: -15px;
+	}
+	#escolha .cabeçalho, #escolha .perguntas{
+		width: 85%;
+	}
+	#final .cabeçalho, #final .perguntas{
+		width: 85%;
+	}
+	#botoes{
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.botao{
+		width: 90% !important;
+		height: 110px !important;
+		flex-direction: row !important;
+	}
+	.btnImg {
+		width: 30% !important;
+		border-top-left-radius: 4em;
+		border-bottom-left-radius: 4em;
+		border-top-right-radius: 0;
+	}
+	.btnImg img{
+		height: 100% !important;
+		width: 110px !important;
+	}
+	.btnTexto{
+		border-top-right-radius: 2em;
+		border-bottom-right-radius: 2em;
+		border-bottom-left-radius: 0;
+		height: 110px !important;
+		line-height: 110px;
+	}
+	.btnTexto p{
+		line-height: 110px;
+		font-size: 18pt;
+	}
+}
+@media screen and (max-width: 680px){
+	h6{
+		font-size: 8pt;
+		bottom: -15px;
+	}
+	.cabeçalho div{
+		margin-bottom: 35px;
+	}
+	.btnImg{
+		width: auto !important;
+	}
+	.btnImg img{
+		width: auto !important;
+	}
+	.botao{
+		height: 80px !important;
+	}
+	.btnTexto{
+		height: 80px !important;
+		line-height: 80px !important;
+	}
+	.btnTexto p{
+		line-height: 80px !important;
+	}
+	.botao{
+		border-radius: 1em;
+	}
+	.btnTexto{
+		border-top-right-radius: 1em;
+		border-bottom-right-radius: 1em;
+	}
+	.btnTexto p{
+		border-top-right-radius: 1em;
+		border-bottom-right-radius: 1em;
+		font-size: 14pt;
+	}
+	.btnImg{
+		border-top-left-radius: 1em;
+		border-bottom-left-radius: 1em;
+	}
+	.btnImg img{
+		border-radius: 1em;
+	}
+	#final .perguntas label:first-of-type{
+		font-size: 20pt !important;
+	}
+	#final .perguntas label:last-of-type{
+		margin-top: 15px !important;
+		margin-bottom: 15px !important;
+	}
+	#final .perguntas label{
+		font-size: 10pt !important;
+	}
+	#final a{
+		font-size: 10pt !important;
+	}
+}
+@media screen and (max-width: 500px){
+	input[type=submit]{
+		width: 50%;
+		margin-top: 0;
+	}
+	h5{
+		font-size: 9pt;
+	}
+	h6{
+		font-size: 6pt;
+		bottom: -15px;
+	}
+	.cabeçalho p{
+		width: 88%;
+		margin-left: 6%;
+		margin-right: 6%;
+		font-size: 11pt;
+		text-align: center;
+	}
+	.cabeçalho a{
+		font-size: 11pt;
+	}
+	body{
+		padding-bottom: 0;
+	}
+	.cabeçalho{
+		margin-top: 20px;
+	}
+	.aceite{
+		position: relative; 
+		min-height: 90px;
+		padding-top: 0;
+	}
+	.aceite2{
+		margin-top: 1.5em !important;
+	}
+	.btnImg{
+		width: auto !important;
+	}
+	.botao{
+		height: 70px !important;
+	}
+	.btnTexto{
+		height: 70px !important;
+		line-height: 70px !important;
+	}
+	.btnTexto p{
+		line-height: 70px !important;
+	}
+	#final .perguntas img{
+		width: 35px;
+	}
+	#final .perguntas label:first-of-type{
+		font-size: 16pt !important;
+	}
+	#final .perguntas label{
+		font-size: 8pt !important;
+	}
+	#final a{
+		font-size: 8pt !important;
+	}
+	#final .perguntas{
+		padding: 1em 2em 0.5em 2em;
+	}
+}
+

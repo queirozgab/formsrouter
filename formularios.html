@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/geral.css">
+
+	<title>Formulário App</title>
+</head>
+<body>
+
+	<section id="escolha">
+			
+		<div class="cabeçalho" style="background-image: linear-gradient(to top, #00a335, #00863F); padding: 60px 0;">
+			<div style="margin-bottom: 8px;">
+				<img src="img/intelbras-logo.svg" style="">
+			</div>
+			
+		</div>
+		<div class="perguntas" style="padding-bottom: 10em;">
+
+			<p style="width: 100%; text-align: center; font-size: 20pt; color: #00a335;">Qual o seu aplicativo?</p>
+
+			
+			<div id="botao">
+				<div class="botao" value="mibo">
+					<div class="btnImg">
+						<img src="img/meuwifi.png">
+					</div>
+					<div class="btnTexto">
+						<p style="width: 100%; text-align: center; font-size: 12pt; color: #00a335;">Meu Wi-Fi Intelbras</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		
+	</section>
+
+	<section id="mibo">
+		<div class="cabeçalho" style="background-image: linear-gradient(to top, #00a335, #00863F); padding: 40px 0;">
+			<div style="width: 45%;">
+				<img src="img/intelbras-logo.svg">
+				<h6>APP Meu Wi-Fi Intelbras</h6>
+			</div>
+  		<p>Olá! Queremos entender melhor o que está acontecendo para podermos lhe auxiliar!</p>
+  		<p>Para isso precisamos das informações abaixo.</p>
+  		<p>Caso você deseje um atendimento mais rápido, acesse o nosso suporte via WhatsApp <a target=”_blank” href="https://wa.me/554821060006/"><b>clicando aqui</b></a></p>
+		</div>
+		<div class="perguntas">
+
+			<div style="margin-top: 0;"><label style="font-size: 10pt;"><b>*</b> Obrigatório</label><br></div>
+	    <div style="margin-top: 0;">
+	        <label>Qual o seu nome? <b>*</b></label>
+	        <input type="text" id="nome" placeholder="Insira sua resposta" oninput="check()">
+	    </div>
+	    <div>
+	        <label>Qual o seu endereço de e-mail?<b>*</b></label>
+	        <input type="text" id="email" placeholder="Insira sua resposta" oninput="check()">
+	    </div>
+	    <div>
+	        <label>Qual o número do seu WhatsApp com DDD? <b>*</b></label>
+	        <input type="text" id="telefone" placeholder="Insira sua resposta" oninput="check(); formTel(this)" maxlength="15"> 
+	    </div>
+	    <div>
+	        <label>Qual o modelo do seu celular? <b>*</b></label>
+	        <input type="text" id="assunto" placeholder="Insira sua resposta" oninput="check()">
+	    </div>
+	    <div>
+	        <label>Poderia detalhar um pouquinho mais da situação ou dúvida? <b>*</b></label>
+	        <textarea placeholder="Insira sua resposta" oninput="check()"></textarea>
+	    </div>
+	    <div class="aceite2">
+      		<label style="position: relative;"> <img src="img/check.svg" class="concordo" style="position: absolute; width: 20px; height: 20px;opacity: 0; transition: 200ms;"><input type="checkbox" class="termo" name="termo"> Eu li e concordo com os <a target=”_blank” href="https://www.intelbras.com/pt-br/politica-de-privacidade"><u>termos de utilização e política de privacidade</u></a> desse formulário.</label>
+	    </div>
+	    <div class="aceite aceite2">
+	    	<input type="submit" value="Enviar"  style="background-color: #00a335; transition: 500ms;" class="inativo">
+	    	<h5>É necessário aceitar os termos e preencher todos os campos para continuar</h5>
+		</div>
+		
+	</section>
+
+	<section id="final">
+		<div class="cabeçalho" style="background-image: linear-gradient(to top, #00a335, #87c984); padding: 40px 0;">
+			<div style="margin-bottom: 10px;">
+			<img src="img/intelbras-logo.svg" style="">
+			</div>
+		</div>
+		<div class="perguntas">
+			<label style="font-size: 30pt; margin-top: 25px;"><img src="img/agradecimento.svg"> Obrigado!</label><br>
+  		<label style="font-size: 12pt">Recebido com sucesso! Em breve entraremos em contato com você.</label>
+  		<label style="display: block; margin-top: 35px; margin-bottom: 25px;"><a target=”_blank” href="#" onclick="window.location.reload();" class="outra">Enviar outra resposta</a></label>
+		</div>
+		
+	</section>
+
+</body>
+
+<script type="text/javascript">
+	
+	$(window).on('load', function() {
+		$("#escolha").css("display", "block")
+		$("#escolha").css("transform", "translateY(0)")
+		check()
+	});
+
+	function check(){
+	  	$("input").each( function(){
+	  		if ($(this).val() == ''){
+	  			$(this).parent().find('b').css('opacity', '1');
+	  		} else{
+	  			$(this).parent().find('b').css('opacity', '0');
+	  		}
+	  	})
+	  	$("textarea").each( function(){
+	  		if ($(this).val() == ''){
+	  			$(this).parent().find('b').css('opacity', '1');
+	  		} else{
+	  			$(this).parent().find('b').css('opacity', '0');
+	  		}
+	  	})
+	}
+	
+	$("[type=submit]").click(function(){
+		continuar($(this));
+	});
+
+	$("[type=checkbox]").click(function(){
+		if ($(this).prop("checked") == true){
+			 $(".concordo").css("opacity", 1)
+			 $('[type=submit]').removeClass("inativo");
+		} else{
+			$(".concordo").css("opacity", 0)
+			$('[type=submit]').addClass("inativo");
+		}
+	})
+
+
+	function continuar(objeto){
+		var OK = true
+		var OK2 = true
+		var id = $(objeto).parent().parent().parent().attr("id")
+		if ($("#" + id).find("#nome").val() == ''){
+			OK = false
+		}
+		if ($("#" + id).find('#email').val() == ''){
+			OK = false
+		}
+		if (isEmail($("#" + id).find('#email').val()) == false){
+			OK2 = false
+		}
+		if ($("#" + id).find('#telefone').val() == ''){
+			OK = false
+		}
+		if ($("#" + id).find("#telefone").val().length < 15){
+			OK2 = false
+		}
+		if ($("#" + id).find('#assunto').val() == ''){
+			OK = false
+		}
+		if ($("#" + id).find('textarea').val() == ''){
+			OK = false
+		}
+		console.log(OK, OK2);
+		if (OK == false){
+			if ($("#" + id).find('.termo').prop('checked') == true) {
+				$('h5').html('É necessário preencher todos os campos para continuar')
+			} else{
+				$('h5').html('É necessário aceitar os termos e preencher todos os campos para continuar');	
+			}
+			$('h5').css('opacity', '1')
+			setTimeout(function(){
+				$('h5').css('opacity', '0')
+				$('h5').html('')
+			}, 10000)
+		}
+		if (OK == true){
+			if (OK2 == false){
+				if (isEmail($("#" + id).find('#email').val()) == false){
+					$('h5').html('É necessário inserir um e-mail válido para continuar');
+				}
+				if ($("#" + id).find("#telefone").val().length < 15){
+					$('h5').html('É necessário inserir um telefone válido para continuar');
+				}
+				$('h5').css('opacity', '1')
+				setTimeout(function(){
+					$('h5').css('opacity', '0')
+					$('h5').html('')
+				}, 10000)
+				return false
+			} else{
+				if ($("#" + id).find('.termo').prop('checked') == true) {
+				    $("#" + id).css("transform", "translateY(-200%)")
+				    $("#final").css("display", "block")
+				    $([document.documentElement, document.body]).animate({
+				        scrollTop: $("body").offset().top
+				    }, 300);
+				    setTimeout(function() {
+				        $("#" + id).css("display", "none")
+				    }, 600);
+				        setTimeout(function() {
+				    $("#final").css("transform", "translateY(0)")
+				    }, 500);
+
+				} else {
+					$('h5').html('É necessário aceitar os termos para continuar');	
+					$('h5').css('opacity', '1')
+					setTimeout(function(){
+						$('h5').css('opacity', '0')
+						$('h5').html('')
+					}, 10000)
+				}
+			}
+		}
+		return false
+	}
+
+	$(".botao").click(function() {
+		if($(this).attr("value") == "mibocam"){
+			$("#escolha").css("transform", "translateY(-200%)")
+			$("#mibocam").css("display", "block")
+			setTimeout(function() {
+				$("#mibocam").css("transform", "translateY(0)")
+				$("#escolha").css("display", "none")
+			}, 500);
+		} else if($(this).attr("value") == "isic"){
+			$("#escolha").css("transform", "translateY(-200%)")
+			$("#isic").css("display", "block")
+			setTimeout(function() {
+				$("#isic").css("transform", "translateY(0)")
+				$("#escolha").css("display", "none")
+			}, 500);
+		} else if($(this).attr("value") == "mibo"){
+			$("#escolha").css("transform", "translateY(-200%)")
+			$("#mibo").css("display", "block")
+			setTimeout(function() {
+				$("#mibo").css("transform", "translateY(0)")
+				$("#escolha").css("display", "none")
+			}, 500);
+		}
+	});
+
+	function formTel(elem){
+	    var v = elem.value.replace(/\D/g,"")
+	    v = v.replace(/(\d{2})(\d{5})(\d)/,"($1) $2-$3")
+	    elem.value = v
+	};
+	
+	function isEmail(email){
+	    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	    return regex.test(email);
+	};
+
+</script>
+
+</html>
